@@ -1,4 +1,5 @@
 import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { LazyLoad1Component } from '../lazy-load1/lazy-load1.component';
 
 @Component({
@@ -12,7 +13,8 @@ export class Component1Component implements OnInit {
   private lazyContainer: any;
 
   constructor(
-    private factory: ComponentFactoryResolver
+    private factory: ComponentFactoryResolver,
+    private dialog: MatDialog,
   ) { }
 
   async loadComponent() {
@@ -20,6 +22,14 @@ export class Component1Component implements OnInit {
     this.lazyContainer.createComponent(
       this.factory.resolveComponentFactory(LazyLoad1Component)
     );
+  }
+
+  async openModal() {
+    // this.lazyContainer.clear();
+    // const component = this.lazyContainer.createComponent(
+    //   this.factory.resolveComponentFactory(LazyLoad1Component)
+    // );
+    this.dialog.open((await import('../lazy-load1/lazy-load1.component')).LazyLoad1Component);
   }
 
   ngOnInit(): void {
