@@ -1,6 +1,4 @@
-# demystify-angular-lazy-loading
-
-Demystify Angula Lazy Loading
+# Demystify Angula Lazy Loading
 
 ## Agenda 
 
