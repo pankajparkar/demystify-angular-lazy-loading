@@ -5,6 +5,7 @@ import { Component2Component } from './component2/component2.component';
 import { RouterModule } from '@angular/router';
 import { LazyLoad1Component } from './lazy-load1/lazy-load1.component';
 import { Modal1Component } from './modal1/modal1.component';
+import { CustomMaterialModule } from '../custom-material/custom-material.module';
 
 const routes = [
   {path: 'component1', component: Component1Component },
@@ -16,6 +17,7 @@ const routes = [
   declarations: [Component1Component, Component2Component, LazyLoad1Component, Modal1Component],
   imports: [
     CommonModule,
+    CustomMaterialModule,
     RouterModule.forChild(routes),
   ]
 })

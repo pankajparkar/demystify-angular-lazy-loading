@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { LazyLoad1Component } from '../lazy-load1/lazy-load1.component';
 
 @Component({
   selector: 'app-component1',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Component1Component implements OnInit {
 
-  constructor() { }
+  @ViewChild('lazyContainer', { read: ViewContainerRef })
+  private lazyContainer: any;
+
+  constructor(
+    private factory: ComponentFactoryResolver
+  ) { }
+
+  async loadComponent() {
+    this.lazyContainer.clear();
+    this.lazyContainer.createComponent(
+      this.factory.resolveComponentFactory(LazyLoad1Component)
+    );
+  }
 
   ngOnInit(): void {
   }
