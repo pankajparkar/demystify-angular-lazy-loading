@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "demystify-angular-lazy-loading"
+  "defaultProject": "demystify-angular-lazy-loading",
+  "cli": {
+    "analytics": "8fd79776-d1be-4a50-a448-2d882e7b5430"
+  }
 }
