@@ -32,6 +32,10 @@ export class Component1Component implements OnInit {
     this.dialog.open((await import('../lazy-load1/lazy-load1.component')).LazyLoad1Component);
   }
 
+  async loadWeatherComponent() {
+    this.dialog.open((await import('../../weather-forecast/dashboard/dashboard.component')).DashboardComponent);
+  }
+
   ngOnInit(): void {
   }
 
