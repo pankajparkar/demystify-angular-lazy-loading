@@ -15,17 +15,17 @@ const getConnectionType = () => {
 @Injectable({
   providedIn: 'root'
 })
-export class implements PreloadingStrategy {
+export class CustomPreloadingStrategy implements PreloadingStrategy {
   preload(route: Route, load: () => Observable<any>): Observable<any> {
-    const preloadModule = getConnectionType() && route.data && route.data['preload'];
-    if (route.data && preloadModule) {
-      console.log('Preload Path: ' + route.path + ', delay:' + route.data['delay']);
-      const preloadWithDelay = route.data['delay'];
-      if (preloadWithDelay) {
-        return timer(5000).pipe(
-          switchMap(() => load())
-        );
-      }
+    const preloadModule = getConnectionType()// && route.data && route.data['preload'];
+    if (preloadModule) {
+      // console.log('Preload Path: ' + route.path + ', delay:' + route.data['delay']);
+      // const preloadWithDelay = route.data['delay'];
+      // if (preloadWithDelay) {
+      //   return timer(5000).pipe(
+      //     switchMap(() => load())
+      //   );
+      // }
       return load();
     } else {
       return EMPTY;

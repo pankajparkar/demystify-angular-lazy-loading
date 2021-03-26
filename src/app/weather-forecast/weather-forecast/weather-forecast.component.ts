@@ -8,6 +8,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class WeatherForecastComponent implements OnInit {
 
+  @Input() headingStart = 'Weather in';
   @Input() weather: any;
   @Input() date: any;
 

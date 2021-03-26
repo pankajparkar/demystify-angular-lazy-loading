@@ -1,6 +1,8 @@
 <p>component1 works!</p>
 
 <ng-container #lazyContainer></ng-container>
+
+<ng-container *ngComponentOutlet="(component | async)"></ng-container>
 <button mat-raised-button (click)="loadComponent()">
     Load Component
 </button>
@@ -11,4 +13,7 @@
 
 <button mat-raised-button (click)="loadWeatherComponent()">
     Load Weather Component
+</button>
+<button mat-raised-button (click)="loadWeatherComponentAsync()">
+    Weather Component Async
 </button>

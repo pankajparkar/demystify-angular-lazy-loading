@@ -1,13 +1,19 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { LocationService } from '../services/location.service';
+
+export interface DynamicComponent {
+
+}
 
 @Component({
   selector: 'wc-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy, DynamicComponent {
+
+  @Input() headingStart = 'Weather Forecast in';
 
   weatherCast: any;
   locationData: any;
