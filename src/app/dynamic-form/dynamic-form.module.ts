@@ -1,13 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicFormComponent } from './dynamic-form.component';
+import { DynamicLoadingComponent } from './dynamic-loading/dynamic-loading.component';
+import { DynamicLazyLoadingComponent } from './dynamic-lazy-loading/dynamic-lazy-loading.component';
+import { RouterModule } from '@angular/router';
 
-
+const routes = [
+  { path: 'dynamic-loading', component: DynamicLoadingComponent},
+  { path: 'dynamic-lazy-loading', component: DynamicLazyLoadingComponent},
+  { path: '', redirectTo: 'dynamic-loading'},
+]
 
 @NgModule({
-  declarations: [DynamicFormComponent],
+  declarations: [DynamicFormComponent, DynamicLoadingComponent, DynamicLazyLoadingComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class DynamicFormModule { }
