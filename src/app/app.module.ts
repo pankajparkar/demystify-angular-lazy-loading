@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { DynamicIoModule } from 'ng-dynamic-component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
     CustomMaterialModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    DynamicIoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

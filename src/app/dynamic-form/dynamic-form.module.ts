@@ -4,6 +4,7 @@ import { DynamicFormComponent } from './dynamic-form.component';
 import { DynamicLoadingComponent } from './dynamic-loading/dynamic-loading.component';
 import { DynamicLazyLoadingComponent } from './dynamic-lazy-loading/dynamic-lazy-loading.component';
 import { RouterModule } from '@angular/router';
+import { DynamicModule } from 'ng-dynamic-component';
 
 const routes = [
   { path: 'dynamic-loading', component: DynamicLoadingComponent},
@@ -15,6 +16,7 @@ const routes = [
   declarations: [DynamicFormComponent, DynamicLoadingComponent, DynamicLazyLoadingComponent],
   imports: [
     CommonModule,
+    DynamicModule,
     RouterModule.forChild(routes)
   ]
 })
