@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -11,5 +12,14 @@ export class SelectComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [SelectComponent],
+  exports: [SelectComponent]
+})
+export class SelectModule {
 
 }

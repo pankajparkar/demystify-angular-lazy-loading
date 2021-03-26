@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-number',
@@ -11,5 +12,14 @@ export class NumberComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [NumberComponent],
+  exports: [NumberComponent]
+})
+export class NumberModule {
 
 }

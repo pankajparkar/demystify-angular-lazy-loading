@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -11,5 +12,14 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [SliderComponent],
+  exports: [SliderComponent]
+})
+export class SliderModule {
 
 }
