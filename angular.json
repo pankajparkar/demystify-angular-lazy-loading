@@ -33,8 +33,7 @@
                 "glob": "**/*",
                 "input": "src/app/weather-forecast/assets",
                 "output": "/assets/"
-              },
-              
+              }
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
@@ -132,6 +131,10 @@
               "devServerTarget": "demystify-angular-lazy-loading:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
